@@ -9,7 +9,7 @@ Our goal is to provide nice and simple java model to simplify developers life.
 
 ```groovy
 dependencies {
-	        implementation 'com.healthlx.cdshooks:model:0.2'
+	implementation 'com.healthlx.cdshooks:model:0.2'
 }
 ```
 
@@ -22,7 +22,7 @@ In case you are using Jackson we have made needed classes for you: ```com.health
 In order to do so add dependency on jackson module
 ```groovy
 dependencies {
-	        implementation 'com.healthlx.cdshooks:jackson:0.2'
+	implementation 'com.healthlx.cdshooks:jackson:0.2'
 }
 ```
 With jackson module you don't need dependency on core cause it is bundled.
