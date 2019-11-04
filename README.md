@@ -20,7 +20,11 @@ dependencies {
 
 ## Usage
 
-You are ready to go. Look for ```com.healthlx.cdshooks.model``` package.
+* You are ready to go. Look for ```com.healthlx.cdshooks.model``` package for models.
+
+* Also you might want to register serializators/deserializators in your app.\
+In case you are using Jackson we have made needed classes for you: ```com.healthlx.cdshooks.jackson```
+If you are using another serialization library you are welcome to contribute. 
 
 ### Limitation
 For now we are using models with dependencies on lombok and jackson but it is work in progress to avoid those dependencies. We are looking for best approach that will enable to use our models in every JVM application. Feel free to participate and contribute.
