@@ -7,14 +7,9 @@ Our goal is to provide nice and simple java model to simplify developers life.
 ## Getting Started
 * Just add dependency:
 
-At the moment we are working on publishing to maven central. So for now please use [JitPack](https://www.jitpack.io):
-
 ```groovy
-repositories {
-    maven { url 'https://www.jitpack.io' }
-}
 dependencies {
-	        implementation 'com.github.HealthLX:cds-hooks:0.1.0'
+	        implementation 'com.healthlx.cdshooks:model:0.2'
 }
 ```
 
@@ -24,6 +19,15 @@ dependencies {
 
 * Also you might want to register serializators/deserializators in your app.\
 In case you are using Jackson we have made needed classes for you: ```com.healthlx.cdshooks.jackson```
+In order to do so add dependency on jackson module
+```groovy
+dependencies {
+	        implementation 'com.healthlx.cdshooks:jackson:0.2'
+}
+```
+With jackson module you don't need dependency on core cause it is bundled.
+
+
 If you are using another serialization library you are welcome to contribute. 
 
 ## Contributing
