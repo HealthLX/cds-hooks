@@ -1,6 +1,6 @@
 # cds-hooks
 
-Library that that models [CDS Hooks v1 specification](https://cds-hooks.org/specification/1.0/).
+Library that models [CDS Hooks v1 specification](https://cds-hooks.org/specification/1.0/).
 
 Our goal is to provide nice and simple java model to simplify developers life.
 
