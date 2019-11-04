@@ -10,3 +10,5 @@
 rootProject.name = 'cds-hooks'
 
 
+include 'model'
+include 'jackson'

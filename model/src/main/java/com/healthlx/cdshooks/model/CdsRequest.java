@@ -1,11 +1,10 @@
 package com.healthlx.cdshooks.model;
 
-import com.fasterxml.jackson.annotation.JsonGetter;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Map;
 import javax.validation.constraints.NotNull;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -23,9 +22,4 @@ public class CdsRequest {
   @NotNull
   private Map<String, Object> context;
   private Map<String, Object> prefetch;
-
-  @JsonGetter("hookInstance")
-  public String getHookInstanceAsString() {
-    return hookInstance;
-  }
 }
