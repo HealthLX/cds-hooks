@@ -1,4 +1,5 @@
 # cds-hooks
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5aa00a93841d4a6c8a8c25555de3f9a5)](https://www.codacy.com/manual/dhasilin/cds-hooks?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HealthLX/cds-hooks&amp;utm_campaign=Badge_Grade)
 
 Library that models [CDS Hooks v1 specification](https://cds-hooks.org/specification/1.0/).
 
