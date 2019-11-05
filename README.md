@@ -5,7 +5,7 @@ Library that models [CDS Hooks v1 specification](https://cds-hooks.org/specifica
 Our goal is to provide nice and simple java model to simplify developers life.
 
 ## Getting Started
-* Just add dependency:
+  * Just add dependency:
 
 ```groovy
 dependencies {
@@ -15,9 +15,9 @@ dependencies {
 
 ## Usage
 
-* You are ready to go. Look for ```com.healthlx.cdshooks.model``` package for models.
+  * You are ready to go. Look for ```com.healthlx.cdshooks.model``` package for models.
 
-* Also you might want to register serializators/deserializators in your app.\
+  * Also you might want to register serializators/deserializators in your app.\
 In case you are using Jackson we have made needed classes for you: ```com.healthlx.cdshooks.jackson```
 In order to do so add dependency on jackson module
 ```groovy
@@ -26,7 +26,6 @@ dependencies {
 }
 ```
 With jackson module you don't need dependency on core cause it is bundled.
-
 
 If you are using another serialization library you are welcome to contribute. 
 
