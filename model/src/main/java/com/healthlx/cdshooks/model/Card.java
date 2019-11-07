@@ -10,6 +10,7 @@ import java.util.List;
 public class Card {
 
   private String summary;
+  private String detail;
   private IndicatorEnum indicator;
   private Source source;
   private List<Suggestion> suggestions = new ArrayList<>();
