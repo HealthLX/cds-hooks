@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import com.fasterxml.jackson.databind.node.IntNode;
 import com.healthlx.cdshooks.model.FhirAuthorization;
 
 import java.io.IOException;
@@ -42,7 +41,8 @@ public class FhirAutorizationCombinedSerializer {
           .asText();
       String tokenType = treeNode.get("token_type")
           .asText();
-      Integer expiresIn = (Integer) ((IntNode) treeNode.get("expires_in")).numberValue();
+      Integer expiresIn = (Integer) treeNode.get("expires_in")
+          .numberValue();
       String scope = treeNode.get("scope")
           .asText();
       String subject = treeNode.get("subject")
