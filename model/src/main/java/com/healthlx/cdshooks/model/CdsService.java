@@ -2,6 +2,8 @@ package com.healthlx.cdshooks.model;
 
 import lombok.Getter;
 
+import java.util.Map;
+
 @Getter
 public class CdsService {
 
@@ -16,7 +18,7 @@ public class CdsService {
   private String hook;
 
   /**
-   * The human-friendly name of this service. OPTIONAL
+   * The human-friendly name of this service. RECOMMENDED
    */
   private String title;
 
@@ -25,7 +27,12 @@ public class CdsService {
    */
   private String description;
 
-  public CdsService(String id, String hook, String title, String description) {
+  /**
+   * The FHIR data that was prefetched by the CDS Client
+   */
+  private Map<String, Object> prefetch;
+
+  public CdsService(String id, String hook, String title, String description, Map<String, Object> prefetch) {
     if (id == null) {
       throw new IllegalArgumentException("CDSService id cannot be null.");
     }
@@ -39,5 +46,6 @@ public class CdsService {
     this.hook = hook;
     this.title = title;
     this.description = description;
+    this.prefetch = prefetch;
   }
 }

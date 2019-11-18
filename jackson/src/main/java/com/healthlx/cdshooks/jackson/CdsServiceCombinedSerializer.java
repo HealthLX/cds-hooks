@@ -2,7 +2,6 @@ package com.healthlx.cdshooks.jackson;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -12,6 +11,7 @@ import com.healthlx.cdshooks.model.CdsService;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class CdsServiceCombinedSerializer {
 
@@ -26,6 +26,10 @@ public class CdsServiceCombinedSerializer {
         gen.writeStringField("title", value.getTitle());
       }
       gen.writeStringField("description", value.getDescription());
+
+      gen.writeFieldName("prefetch");
+      gen.writeObject(value.getPrefetch());
+
       gen.writeEndObject();
     }
   }
@@ -33,8 +37,7 @@ public class CdsServiceCombinedSerializer {
   public static class CdsServiceDeserializer extends JsonDeserializer<CdsService> {
 
     @Override
-    public CdsService deserialize(JsonParser p, DeserializationContext ctxt)
-        throws IOException, JsonProcessingException {
+    public CdsService deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
       JsonNode treeNode = p.getCodec()
           .readTree(p);
 
@@ -45,7 +48,13 @@ public class CdsServiceCombinedSerializer {
       String description = treeNode.get("description")
           .asText();
       JsonNode titleNode = treeNode.get("title");
-      return new CdsService(id, hook, titleNode != null ? titleNode.asText() : null, description);
+
+      JsonParser prefetchParser = treeNode.get("prefetch")
+          .traverse();
+      prefetchParser.nextToken();
+      Map prefetch = ctxt.readValue(prefetchParser, Map.class);
+
+      return new CdsService(id, hook, titleNode != null ? titleNode.asText() : null, description, prefetch);
     }
   }
 }
