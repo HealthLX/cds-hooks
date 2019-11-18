@@ -10,4 +10,6 @@ public class Link {
   private String label;
   private String url;
   private String type;
+
+  private String appContext;
 }

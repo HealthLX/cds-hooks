@@ -1,10 +1,7 @@
-package com.healthlx.cdshooks.jackson;
+package com.healthlx.cdshooks.spec;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.healthlx.cdshooks.model.CdsRequest;
-import com.healthlx.cdshooks.model.FhirAuthorization;
-import com.healthlx.cdshooks.model.IndicatorEnum;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,17 +17,7 @@ public class CdsRequestSpecificationTest {
 
   @Before
   public void setUp() {
-    objectMapper = new ObjectMapper();
-    SimpleModule simpleModule = new SimpleModule();
-    simpleModule.addSerializer(FhirAuthorization.class,
-        new FhirAutorizationCombinedSerializer.FhirAutorizationSerializer());
-    simpleModule.addDeserializer(FhirAuthorization.class,
-        new FhirAutorizationCombinedSerializer.FhirAutorizationDeserializer());
-
-    simpleModule.addSerializer(IndicatorEnum.class, new IndicatorEnumCombinedSerializer.IndicatorEnumSerializer());
-    simpleModule.addDeserializer(IndicatorEnum.class, new IndicatorEnumCombinedSerializer.IndicatorEnumDeserializer());
-
-    objectMapper.registerModule(simpleModule);
+    objectMapper = new ObjectMapperBuilder().build();
   }
 
   @Test

@@ -12,4 +12,5 @@ public class FhirAuthorization {
   private Integer expiresIn;
   private String scope;
   private String subject;
+
 }

@@ -9,7 +9,10 @@ dependencies {
 
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.9.8'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
-    
+
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+
 
     // https://mvnrepository.com/artifact/junit/junit
     testCompile group: 'junit', name: 'junit', version: '4.12'
@@ -19,4 +22,6 @@ dependencies {
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
-apply from: 'release.gradle'
+if (project.hasProperty("signing.keyId")) {
+    apply from: 'release.gradle'
+}
