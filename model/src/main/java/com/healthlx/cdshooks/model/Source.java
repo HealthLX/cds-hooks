@@ -9,4 +9,7 @@ public class Source {
 
   private String label;
   private String url;
+
+  private String icon;
+
 }

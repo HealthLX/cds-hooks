@@ -1,7 +1,9 @@
-package com.healthlx.cdshooks.jackson;
+package com.healthlx.cdshooks.spec;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.healthlx.cdshooks.jackson.FhirAutorizationCombinedSerializer;
+import com.healthlx.cdshooks.jackson.IndicatorEnumCombinedSerializer;
 import com.healthlx.cdshooks.model.CdsRequest;
 import com.healthlx.cdshooks.model.FhirAuthorization;
 import com.healthlx.cdshooks.model.IndicatorEnum;
