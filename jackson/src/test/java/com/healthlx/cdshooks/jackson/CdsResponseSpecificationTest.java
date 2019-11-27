@@ -10,6 +10,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class CdsResponseSpecificationTest {
@@ -57,7 +59,8 @@ public class CdsResponseSpecificationTest {
         + "        \"label\": \"Static CDS Service Example\"\n" + "      }\n" + "    }\n" + "  ]\n" + "}";
 
     CdsResponse mappedResponse = objectMapper.readValue(string, CdsResponse.class);
-    assertTrue(mappedResponse.getCards().isEmpty());
+    assertFalse(mappedResponse.getCards().isEmpty());
+    assertTrue(mappedResponse.getCards().get(0).getLinks().get(2).getAppContext().contains("\"module\":4235"));
   }
 
 }

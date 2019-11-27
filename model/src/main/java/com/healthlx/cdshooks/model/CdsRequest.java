@@ -13,6 +13,9 @@ public class CdsRequest {
   @NotNull(message = "unsupported hook")
   private String hook;
 
+  /**
+   * hookInstance is globally unique and should contain enough entropy to be un-guessable.
+   */
   @NotNull
   private String hookInstance;
 
