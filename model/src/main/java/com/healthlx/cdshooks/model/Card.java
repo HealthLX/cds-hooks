@@ -10,9 +10,11 @@ import java.util.List;
 public class Card {
 
   private String summary;
+  private String detail;
   private IndicatorEnum indicator;
   private Source source;
   private List<Suggestion> suggestions = new ArrayList<>();
+  private String selectionBehavior;
   private List<Link> links = new ArrayList<>();
 
   public Card addSuggestionsItem(Suggestion suggestionsItem) {
